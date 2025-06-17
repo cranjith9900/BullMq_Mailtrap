@@ -1,0 +1,23 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Worker",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}/worker.ts",
+      "runtimeArgs": ["-r", "ts-node/register"],
+      "outFiles": []
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Producer",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}/producer.ts",
+      "runtimeArgs": ["-r", "ts-node/register"],
+      "outFiles": []
+    }
+  ]
+}
