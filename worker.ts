@@ -4,12 +4,14 @@ import dotenv from "dotenv";
 import mailProcessor from "./mail.processor"; // ✅ direct import of function
 dotenv.config();
 
+
 export const worker = new Worker(
   config.queueName, // 👈 queue name from config
   mailProcessor,    // 👈 pass function directly
   {
     connection: config.connection,
     concurrency: config.concurrency,
+    limiter: config.limiter,
   }
 );
 
